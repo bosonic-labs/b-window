@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Demo</title>
+    <meta charset="utf-8">
+    <script src="js/bosonic-polyfills.js"></script>
+    <script src="js/b-dialog.js"></script>
+    <link href="css/b-dialog.css" rel="stylesheet">
+    <script src="js/b-window.js"></script>
+    <link href="css/b-window.css" rel="stylesheet">
+</head>
+<body>
+    <style>
+        h3 {
+            margin: 0;
+        }
+    </style>
+    <button id="show-window">Show window</button>
+    <b-window>
+        <h3>Test</h3>
+        <p>Hello world</p>
+        <input type="text">
+    </b-window>
+
+    <script type="text/javascript">
+        window.addEventListener('WebComponentsReady', function() {
+            var btn = document.getElementById('show-window');
+            btn.addEventListener('click', function() {
+                document.querySelector('b-window').showModal();
+            }, false);
+        });
+    </script>
+</body>
